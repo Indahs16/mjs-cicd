@@ -1,0 +1,19 @@
+name: CI Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set environment variable
+        run: echo "REQUIRED_VAR=HelloMJS" >> $GITHUB_ENV
+
+      - name: Run bash test script
+        run: ./scripts/my-script.sh
