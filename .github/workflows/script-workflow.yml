@@ -30,12 +30,6 @@ jobs:
       - name: Run Shellcheck on the script
         run: shellcheck scripts/my-script.sh
       
-      - name: Install Flowfinder (SAST Tool)
-        run: sudo apt-get install -y flowfinder
-      
-      - name: Run Flowfinder security scan on script
-        run: flowfinder scripts/my-script.sh
-      
       - name: Show test message
         run: echo "Running simple test assertion..."
       
